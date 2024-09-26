@@ -5,7 +5,8 @@ const session = require('express-session');
 const flash = require('connect-flash');
 const bodyParser = require('body-parser');
 const app = express();
-require('dotenv').config();
+const path = require('path');
+const upload = require('./config/multer');
 
 require('dotenv').config();
 require('./config/passport')(passport);
@@ -25,9 +26,12 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
-
 // EJS
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'views')));
+app.use('/css', express.static(path.join(__dirname, 'css')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Routes
 app.use('/', require('./routes/authRoutes'));

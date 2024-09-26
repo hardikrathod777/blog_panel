@@ -1,0 +1,351 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+}
+
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+.register-box {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.register-box h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.register-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.register-box label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.register-box input {
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+.register-box input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.register-box button {
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-box button:hover {
+    background-color: #0056b3;
+}
+
+.register-box .login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.register-box .login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-box .login-link a:hover {
+    text-decoration: underline;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.login-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-box label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.login-box input {
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+.login-box input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.login-box button {
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background-color: #0056b3;
+}
+
+.login-box .register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.login-box .register-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-box .register-link a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .login-box {
+        padding: 20px;
+    }
+}        .add-blog-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f1f1f1;
+}
+
+.add-blog-box {
+    width: 100%;
+    max-width: 500px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.add-blog-box h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+.add-blog-box form {
+    display: flex;
+    flex-direction: column;
+}
+
+.add-blog-box label {
+    font-size: 14px;
+    margin-bottom: 8px;
+    color: #333;
+}
+
+.add-blog-box input[type="text"],
+.add-blog-box input[type="file"],
+.add-blog-box textarea {
+    padding: 12px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+
+.add-blog-box input[type="text"]:focus,
+.add-blog-box input[type="file"]:focus,
+.add-blog-box textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.add-blog-box button {
+    padding: 12px;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.add-blog-box button:hover {
+    background-color: #0056b3;
+}
+
+.add-blog-box .back-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.add-blog-box .back-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.add-blog-box .back-link a:hover {
+    text-decoration: underline;
+}
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-top: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+.card-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.card-actions a, .card-actions button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card-actions button {
+    background-color: #dc3545;
+}
+
+.card-actions a:hover, .card-actions button:hover {
+    opacity: 0.8;
+}
+
+/* Responsive layout */
+@media (max-width: 768px) {
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+}
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Adjust spacing between cards */
+}
+
+.blog-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 15px;
+    width: 300px; /* Adjust card width */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card img {
+    max-width: 100%;
+    border-radius: 5px;
+}
+
+.card-actions {
+    margin-top: 10px;
+}
