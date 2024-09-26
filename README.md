@@ -54,3 +54,22 @@ The **Blog Post Panel** is a web application that allows users to register, log 
    ```bash
    git clone https://github.com/your-username/blog-post-panel.git
    cd blog-post-panel
+
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+
+3. Set up your environment variables in a .env file:
+
+   ```bash
+     PORT=3000
+      MONGODB_URI=your_mongodb_uri
+
+4. Start the application:
+
+   ```bash
+     npm start
+
+5. Visit `http://localhost:3000/my-blogs` in your browser.
