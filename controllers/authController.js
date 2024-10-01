@@ -41,6 +41,13 @@ exports.renderLoginPage = (req, res) => {
     res.render('login'); // Assuming you have a login.ejs in your views folder
 };
 
+/*************  ✨ Codeium Command ⭐  *************/
+/**
+ * Renders the user registration page
+ * @param {Object} req - Express request object
+ * @param {Object} res - Express response object
+ */
+/******  b27e4f7c-37ed-4c93-9470-24ed4cefa136  *******/
 exports.renderRegisterUser = (req , res) => {
     res.render('register'); // Assuming you have a register.ejs in your views folder
 }
@@ -55,7 +62,17 @@ exports.loginUser = (req, res, next) => {
     })(req, res, next);
 };
 
+// exports.logoutUser = (req, res) => {
+//     req.logout();
+//     res.redirect('/');
+// };
+
+
 exports.logoutUser = (req, res) => {
-    req.logout();
-    res.redirect('/');
+    req.logout(err => {
+        if (err) {
+            return next(err); // Handle error during logout
+        }
+        res.redirect('/login'); // Redirect to the login page after logout
+    });
 };

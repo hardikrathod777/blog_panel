@@ -1,6 +1,8 @@
 const Blog = require('../models/Blog');
 const multer = require('multer');
 const upload = require('../config/multer');
+const bcrypt = require('bcrypt');
+const User = require('../models/User')
 
 // Blog logic for Add, Edit, Delete
 exports.getAllBlogs = async (req, res) => {
@@ -18,7 +20,40 @@ exports.getMyBlogs = async (req, res) => {
     res.render('myBlogs', { blogs, user: req.user }); // Pass the user object
 };
 
+exports.changePass = async (req , res) => {
+    res.render('changePass');
+}
+exports.updatepass = async (req, res) => {
+    const { cur_pass, new_pass, conf_pass } = req.body;
 
+    // Check if the new password matches the confirm password
+    if (new_pass !== conf_pass) {
+        return res.render('changePass', { errors: [{ msg: 'New passwords do not match' }] });
+    }
+
+    try {
+        // Find the user by ID (assuming `req.user` contains the logged-in user's data)
+        const user = await User.findById(req.user._id);
+
+        // Check if the current password is correct
+        const isMatch = await bcrypt.compare(cur_pass, user.password);
+        if (!isMatch) {
+            return res.render('changePass', { errors: [{ msg: 'Current password is incorrect' }] });
+        }
+
+        // Hash the new password
+        const hashedPassword = await bcrypt.hash(new_pass, 10);
+
+        // Update the user's password
+        user.password = hashedPassword;
+        await user.save();
+
+        res.redirect('/my-blogs'); // Redirect to a relevant page (e.g., profile page)
+    } catch (error) {
+        console.error(error);
+        res.render('changePass', { errors: [{ msg: 'Error updating password' }] });
+    }
+}
 
 exports.addBlogPost = async (req, res) => {
     const { title, description } = req.body;

@@ -164,13 +164,23 @@
                 <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto"></div>
               </a>
             </li>
-            <li class="menu-item">
+            <li class="menu-item active open">
               <a
                 href="/changepassword"
                 class="menu-link">
                 <i class="menu-icon tf-icons ri-mail-open-line"></i>
                 <div data-i18n="Email">Change Password</div>
                 <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto"></div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a
+                href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-chat.html"
+                target="_blank"
+                class="menu-link">
+                <i class="menu-icon tf-icons ri-wechat-line"></i>
+                <div data-i18n="Chat">Chat</div>
+                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
               </a>
             </li>
             <li class="menu-item">
@@ -394,9 +404,9 @@
 
             <!-- Icons -->
             <li class="menu-item">
-              <a href="/logout" class="menu-link btn btn-danger">
+              <a href="icons-ri.html" class="menu-link">
                 <i class="menu-icon tf-icons ri-remixicon-line"></i>
-                <div data-i18n="Icons">Log Out</div>
+                <div data-i18n="Icons">Icons</div>
               </a>
             </li>
 
@@ -604,27 +614,24 @@
             </div>
           </nav>
 
-            <% if (blogs.length > 0) { %>
-              <div class="blog-container">
-                  <% blogs.forEach(blog => { %>
-                      <div class="blog-card">
-                          <img src="/uploads/<%= blog.image %>" alt="<%= blog.title %>">
-                          <h3><%= blog.title %></h3>
-                          <p><%= blog.description %></p>
-                          <% if (blog.author.toString() === user._id.toString()) { %>
-                              <div class="card-actions">
-                                  <a href="/edit-blog/<%= blog._id %>">Edit</a>
-                                  <form action="/delete-blog/<%= blog._id %>" method="POST" style="display:inline;">
-                                      <button type="submit">Delete</button>
-                                  </form>
-                              </div>
-                          <% } %>
-                      </div>
-                  <% }) %>
-              </div>
-          <% } else { %>
-              <p style="text-align:center;">You haven't added any blogs yet.</p>
-          <% } %>
+          <div class="add-blog-container">
+            <div class="add-blog-box">
+                <h1>Change Password</h1>
+                <form method="POST" action="/updatepass">
+                  <label for="cur_pass">Current Password</label>
+                  <input type="password" id="cur_pass" name="cur_pass" placeholder="Current Password" required>
+                  
+                  <label for="new_pass">New Password</label>
+                  <input type="password" id="new_pass" name="new_pass" placeholder="New Password" required>
+                  
+                  <label for="conf_pass">Confirm Password</label>
+                  <input type="password" id="conf_pass" name="conf_pass" placeholder="Confirm Password" required>
+                  
+                  <button type="submit">Change Password</button>
+              </form>
+              
+            </div>
+        </div>
                 
             
 
