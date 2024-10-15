@@ -3,12 +3,21 @@ const multer = require('multer');
 const upload = require('../config/multer');
 const bcrypt = require('bcrypt');
 const User = require('../models/User')
-
+const Comment = require('../models/Comment');
 // Blog logic for Add, Edit, Delete
 exports.getAllBlogs = async (req, res) => {
     try {
         const blogs = await Blog.find().populate('author', 'username'); // Populate the author field if you're storing user references
-        res.render('allBlogs', { blogs });
+// Fetch all comments and group them by blog ID
+const comments = await Comment.find().populate('user', 'username'); // Populate user info for comments
+        const commentsByBlogId = comments.reduce((acc, comment) => {
+            if (!acc[comment.blog]) {
+                acc[comment.blog] = [];
+            }
+            acc[comment.blog].push(comment);
+            return acc;
+        }, {});
+        res.render('allBlogs', { blogs,commentsByBlogId });
     } catch (error) {
         console.error(error);
         res.status(500).send('Error fetching blogs');

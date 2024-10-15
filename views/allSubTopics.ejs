@@ -173,7 +173,25 @@
                 <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto"></div>
               </a>
             </li>
-            <li class="menu-item active open">
+            <li class="menu-item">
+              <a
+                href="/addSubTopic"
+                class="menu-link">
+                <i class="menu-icon tf-icons ri-mail-open-line"></i>
+                <div data-i18n="Email">Add Sub-Topics</div>
+                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto"></div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a
+              href="/subTopics"
+              class="menu-link">
+              <i class="menu-icon tf-icons ri-mail-open-line"></i>
+              <div data-i18n="Email">All Sub-Topics</div>
+              <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto"></div>
+            </a>
+            </li>
+            <li class="menu-item">
               <a
                 href="/changepassword"
                 class="menu-link">
@@ -182,60 +200,7 @@
                 <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto"></div>
               </a>
             </li>
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-chat.html"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons ri-wechat-line"></i>
-                <div data-i18n="Chat">Chat</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-calendar.html"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons ri-calendar-line"></i>
-                <div data-i18n="Calendar">Calendar</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-kanban.html"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons ri-drag-drop-line"></i>
-                <div data-i18n="Kanban">Kanban</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-              </a>
-            </li>
-            <!-- Pages -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-layout-left-line"></i>
-                <div data-i18n="Account Settings">Account Settings</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-notifications.html" class="menu-link">
-                    <div data-i18n="Notifications">Notifications</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-connections.html" class="menu-link">
-                    <div data-i18n="Connections">Connections</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
+            
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ri-shield-keyhole-line"></i>
@@ -411,18 +376,11 @@
               </ul>
             </li>
 
+            <!-- Icons -->
             <li class="menu-item">
               <a href="/logout" class="menu-link btn btn-danger">
                 <i class="menu-icon tf-icons ri-remixicon-line"></i>
                 <div data-i18n="Icons">Log Out</div>
-              </a>
-            </li>
-
-            <!-- Icons -->
-            <li class="menu-item">
-              <a href="icons-ri.html" class="menu-link">
-                <i class="menu-icon tf-icons ri-remixicon-line"></i>
-                <div data-i18n="Icons">Icons</div>
               </a>
             </li>
 
@@ -585,33 +543,9 @@
                         </div>
                       </a>
                     </li>
-                    <li>
-                      <div class="dropdown-divider"></div>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="ri-user-3-line ri-22px me-2"></i>
-                        <span class="align-middle">My Profile</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <i class="ri-settings-4-line ri-22px me-2"></i>
-                        <span class="align-middle">Settings</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a class="dropdown-item" href="#">
-                        <span class="d-flex align-items-center align-middle">
-                          <i class="flex-shrink-0 ri-file-text-line ri-22px me-3"></i>
-                          <span class="flex-grow-1 align-middle">Billing</span>
-                          <span
-                            class="flex-shrink-0 badge badge-center rounded-pill bg-danger h-px-20 d-flex align-items-center justify-content-center"
-                            >4</span
-                          >
-                        </span>
-                      </a>
-                    </li>
+                    
+                    
+                    
                     <li>
                       <div class="dropdown-divider"></div>
                     </li>
@@ -630,24 +564,20 @@
             </div>
           </nav>
 
-          <div class="add-blog-container">
-            <div class="add-blog-box">
-                <h1>Change Password</h1>
-                <form method="POST" action="/updatepass/<%= userId %>">
-                  <label for="cur_pass">Current Password</label>
-                  <input type="password" id="cur_pass" name="cur_pass" placeholder="Current Password" required>
-                  
-                  <label for="new_pass">New Password</label>
-                  <input type="password" id="new_pass" name="new_pass" placeholder="New Password" required>
-                  
-                  <label for="conf_pass">Confirm Password</label>
-                  <input type="password" id="conf_pass" name="conf_pass" placeholder="Confirm Password" required>
-                  
-                  <button type="submit">Change Password</button>
-              </form>
-              
-            </div>
-        </div>
+            <h1>All Sub-Topics</h1>
+            <ul>
+                <% subTopics.forEach(function(subTopic) { %>
+                    <li>
+                        <h2><%= subTopic.title %></h2>
+                        <p>Description: <%= subTopic.description %></p>
+                        <% if (subTopic.Topic) { %> <!-- Check if Topic is populated -->
+                            <p>Related Topic: <%= subTopic.Topic.title %></p>
+                        <% } else { %>
+                            <p>Related Topic: Not available</p> <!-- Handle missing topic -->
+                        <% } %>
+                    </li>
+                <% }) %>
+            </ul>
                 
             
 

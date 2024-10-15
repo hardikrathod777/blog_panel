@@ -36,6 +36,10 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Routes
 app.use('/', require('./routes/authRoutes'));
 app.use('/', require('./routes/blogRoutes'));
+app.use('/', require('./routes/topicRouters'));
+app.use('/', require('./routes/SubtopicsRouters'));
+app.use('/', require('./routes/commentRouters'));
+// app.use('/subTopics', subTopicRoutes);
 
 // Static folder
 app.use(express.static('public'));

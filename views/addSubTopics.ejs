@@ -1,3 +1,5 @@
+
+
 <!doctype html>
 
 <html
@@ -43,12 +45,50 @@
     <link rel="stylesheet" href="./css/apex-charts.css" />
 
     <!-- Page CSS -->
-    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css">
+
     <!-- Helpers -->
     <script src="../assets/vendor/js/helpers.js"></script>
     <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
     <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
     <script src="./css/config.js"></script>
+        <style>
+            .dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+        </style>
+
   </head>
 
   <body>
@@ -134,27 +174,28 @@
 
           <ul class="menu-inner py-1">
             <!-- Dashboards -->
-            <li class="menu-item active open">
+            <li class="menu-item">
               <a href="/my-blogs" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons ri-home-smile-line"></i>
                 <div data-i18n="Dashboards">My Blogs</div>
               </a>
             </li>
 
-            
+          
+
             <li class="menu-header mt-7">
               <span class="menu-header-text">Apps &amp; Pages</span>
             </li>
             <!-- Apps -->
             <li class="menu-item">
-              <a
-                href="/blogs"
-                class="menu-link">
-                <i class="menu-icon tf-icons ri-mail-open-line"></i>
-                <div data-i18n="Email">All Blogs</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto"></div>
-              </a>
-          </li>
+                <a
+                  href="/blogs"
+                  class="menu-link">
+                  <i class="menu-icon tf-icons ri-mail-open-line"></i>
+                  <div data-i18n="Email">All Blogs</div>
+                  <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto"></div>
+                </a>
+            </li>
             <li class="menu-item">
               <a
                 href="/add-blog"
@@ -164,16 +205,16 @@
                 <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto"></div>
               </a>
             </li>
+            <li class="menu-item  active open">
+                <a
+                  href="/addTopics"
+                  class="menu-link">
+                  <i class="menu-icon tf-icons ri-mail-open-line"></i>
+                  <div data-i18n="Email">Add Topics</div>
+                  <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto"></div>
+                </a>
+              </li>
             <li class="menu-item">
-              <a
-                href="/addTopics"
-                class="menu-link">
-                <i class="menu-icon tf-icons ri-mail-open-line"></i>
-                <div data-i18n="Email">Add Topics</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto"></div>
-              </a>
-            </li>
-            <li class="menu-item active open">
               <a
                 href="/changepassword"
                 class="menu-link">
@@ -182,289 +223,19 @@
                 <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto"></div>
               </a>
             </li>
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-chat.html"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons ri-wechat-line"></i>
-                <div data-i18n="Chat">Chat</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-              </a>
+            <li>
+              <div class="d-grid px-4 pt-2 pb-1">
+                <a class="btn btn-danger d-flex" href="javascript:void(0);">
+                  <small class="align-middle">Logout</small>
+                  <i class="ri-logout-box-r-line ms-2 ri-16px"></i>
+                </a>
+              </div>
             </li>
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-calendar.html"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons ri-calendar-line"></i>
-                <div data-i18n="Calendar">Calendar</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-              </a>
-            </li>
-            <li class="menu-item">
-              <a
-                href="https://demos.themeselection.com/materio-bootstrap-html-admin-template/html/vertical-menu-template/app-kanban.html"
-                target="_blank"
-                class="menu-link">
-                <i class="menu-icon tf-icons ri-drag-drop-line"></i>
-                <div data-i18n="Kanban">Kanban</div>
-                <div class="badge bg-label-primary fs-tiny rounded-pill ms-auto">Pro</div>
-              </a>
-            </li>
-            <!-- Pages -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-layout-left-line"></i>
-                <div data-i18n="Account Settings">Account Settings</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="pages-account-settings-account.html" class="menu-link">
-                    <div data-i18n="Account">Account</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-notifications.html" class="menu-link">
-                    <div data-i18n="Notifications">Notifications</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-account-settings-connections.html" class="menu-link">
-                    <div data-i18n="Connections">Connections</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-shield-keyhole-line"></i>
-                <div data-i18n="Authentications">Authentications</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="auth-login-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic">Login</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="auth-register-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic">Register</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">
-                    <div data-i18n="Basic">Forgot Password</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-box-3-line"></i>
-                <div data-i18n="Misc">Misc</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="pages-misc-error.html" target="_blank" class="menu-link">
-                    <div data-i18n="Error">Error</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="pages-misc-under-maintenance.html" target="_blank" class="menu-link">
-                    <div data-i18n="Under Maintenance">Under Maintenance</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <!-- Components -->
-            <li class="menu-header mt-7"><span class="menu-header-text">Components</span></li>
-            <!-- Cards -->
-            <li class="menu-item">
-              <a href="cards-basic.html" class="menu-link">
-                <i class="menu-icon tf-icons ri-bank-card-2-line"></i>
-                <div data-i18n="Basic">Cards</div>
-              </a>
-            </li>
-            <!-- User interface -->
-            <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-toggle-line"></i>
-                <div data-i18n="User interface">User interface</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="ui-accordion.html" class="menu-link">
-                    <div data-i18n="Accordion">Accordion</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-alerts.html" class="menu-link">
-                    <div data-i18n="Alerts">Alerts</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-badges.html" class="menu-link">
-                    <div data-i18n="Badges">Badges</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-buttons.html" class="menu-link">
-                    <div data-i18n="Buttons">Buttons</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-carousel.html" class="menu-link">
-                    <div data-i18n="Carousel">Carousel</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-collapse.html" class="menu-link">
-                    <div data-i18n="Collapse">Collapse</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-dropdowns.html" class="menu-link">
-                    <div data-i18n="Dropdowns">Dropdowns</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-footer.html" class="menu-link">
-                    <div data-i18n="Footer">Footer</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-list-groups.html" class="menu-link">
-                    <div data-i18n="List Groups">List Groups</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-modals.html" class="menu-link">
-                    <div data-i18n="Modals">Modals</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-navbar.html" class="menu-link">
-                    <div data-i18n="Navbar">Navbar</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-offcanvas.html" class="menu-link">
-                    <div data-i18n="Offcanvas">Offcanvas</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-pagination-breadcrumbs.html" class="menu-link">
-                    <div data-i18n="Pagination & Breadcrumbs">Pagination &amp; Breadcrumbs</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-progress.html" class="menu-link">
-                    <div data-i18n="Progress">Progress</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-spinners.html" class="menu-link">
-                    <div data-i18n="Spinners">Spinners</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-tabs-pills.html" class="menu-link">
-                    <div data-i18n="Tabs & Pills">Tabs &amp; Pills</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-toasts.html" class="menu-link">
-                    <div data-i18n="Toasts">Toasts</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-tooltips-popovers.html" class="menu-link">
-                    <div data-i18n="Tooltips & Popovers">Tooltips &amp; Popovers</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="ui-typography.html" class="menu-link">
-                    <div data-i18n="Typography">Typography</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <!-- Extended components -->
-            <li class="menu-item">
-              <a href="javascript:void(0)" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-box-3-line"></i>
-                <div data-i18n="Extended UI">Extended UI</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="extended-ui-perfect-scrollbar.html" class="menu-link">
-                    <div data-i18n="Perfect Scrollbar">Perfect Scrollbar</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="extended-ui-text-divider.html" class="menu-link">
-                    <div data-i18n="Text Divider">Text Divider</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-
-            <li class="menu-item">
-              <a href="/logout" class="menu-link btn btn-danger">
-                <i class="menu-icon tf-icons ri-remixicon-line"></i>
-                <div data-i18n="Icons">Log Out</div>
-              </a>
-            </li>
-
-            <!-- Icons -->
-            <li class="menu-item">
-              <a href="icons-ri.html" class="menu-link">
-                <i class="menu-icon tf-icons ri-remixicon-line"></i>
-                <div data-i18n="Icons">Icons</div>
-              </a>
-            </li>
+            
 
             <!-- Forms & Tables -->
             <li class="menu-header fw-medium mt-4"><span class="menu-header-text">Forms &amp; Tables</span></li>
             <!-- Forms -->
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-radio-button-line"></i>
-                <div data-i18n="Form Elements">Form Elements</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="forms-basic-inputs.html" class="menu-link">
-                    <div data-i18n="Basic Inputs">Basic Inputs</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="forms-input-groups.html" class="menu-link">
-                    <div data-i18n="Input groups">Input groups</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
-            <li class="menu-item">
-              <a href="javascript:void(0);" class="menu-link menu-toggle">
-                <i class="menu-icon tf-icons ri-box-3-line"></i>
-                <div data-i18n="Form Layouts">Form Layouts</div>
-              </a>
-              <ul class="menu-sub">
-                <li class="menu-item">
-                  <a href="form-layouts-vertical.html" class="menu-link">
-                    <div data-i18n="Vertical Form">Vertical Form</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="form-layouts-horizontal.html" class="menu-link">
-                    <div data-i18n="Horizontal Form">Horizontal Form</div>
-                  </a>
-                </li>
-              </ul>
-            </li>
             <!-- Form Validation -->
             <li class="menu-item">
               <a
@@ -615,14 +386,14 @@
                     <li>
                       <div class="dropdown-divider"></div>
                     </li>
-                    <li>
+                    <!-- <li>
                       <div class="d-grid px-4 pt-2 pb-1">
                         <a class="btn btn-danger d-flex" href="javascript:void(0);">
                           <small class="align-middle">Logout</small>
                           <i class="ri-logout-box-r-line ms-2 ri-16px"></i>
                         </a>
                       </div>
-                    </li>
+                    </li> -->
                   </ul>
                 </li>
                 <!--/ User -->
@@ -632,26 +403,68 @@
 
           <div class="add-blog-container">
             <div class="add-blog-box">
-                <h1>Change Password</h1>
-                <form method="POST" action="/updatepass/<%= userId %>">
-                  <label for="cur_pass">Current Password</label>
-                  <input type="password" id="cur_pass" name="cur_pass" placeholder="Current Password" required>
-                  
-                  <label for="new_pass">New Password</label>
-                  <input type="password" id="new_pass" name="new_pass" placeholder="New Password" required>
-                  
-                  <label for="conf_pass">Confirm Password</label>
-                  <input type="password" id="conf_pass" name="conf_pass" placeholder="Confirm Password" required>
-                  
-                  <button type="submit">Change Password</button>
-              </form>
-              
-            </div>
-        </div>
-                
-            
+                <h1>Add Sub-Topics</h1>
+<form method="POST" action="/add-SubTopic">
+    <label for="title">Title</label>
+    <input type="text" id="title" name="title" placeholder="Enter sub-topic title" required>
 
-            <div class="content-backdrop fade"></div>
+    <label for="description">Description</label>
+    <textarea id="description" name="description" placeholder="Enter a brief description" rows="4" required></textarea>
+
+    <label for="topics">Select Topic</label>
+    <select id="topics" name="topicId" required>
+        <% topics.forEach(function(topic) { %>
+            <option value="<%= topic._id %>"><%= topic.title %></option>
+        <% }) %>
+    </select>
+
+    <button type="submit">Add Sub-Topic</button>
+</form>
+
+<!-- <% topics.forEach(function(topic) { %>
+    <h2><%= topic.title %></h2>
+    <p>Posted by: <%= topic.user.name %></p>
+
+    <% if (topic.user._id.toString() === user._id.toString()) { %>
+        <form action="/delete-topic/<%= topic._id %>" method="POST">
+            <button type="submit">Delete</button>
+        </form>
+    <% } %>
+<% }) %> -->
+
+
+<!-- <h1>All Sub-Topics</h1>
+<ul>
+    <% subTopics.forEach(function(subTopic) { %>
+        <li>
+            <h2><%= subTopic.title %></h2>
+            <p>Description: <%= subTopic.description %></p>
+            <% if (subTopic.Topic) { %> <!-- Check if Topic is populated -->
+                <!-- <p>Related Topic: <%= subTopic.Topic.title %></p>
+            <% } else { %>
+                <p>Related Topic: Not available</p> <!-- Handle missing topic -->
+            <!-- <% } %>
+        </li>
+    <% }) %>
+</ul> -->
+
+
+<!-- <ul>
+    <% topics.forEach(function(topic) { %>
+        <li>
+            <h3><%= topic.title %></h3>
+            <p><%= topic.description %></p>
+            <p>Posted by: <%= topic.user.name %></p>
+
+            <% if (topic.user._id.toString() === user._id.toString()) { %>
+              <form action="/delete-topic/<%= topic._id %>" method="POST">
+                <button type="submit">Delete</button>
+            </form>
+            <% } %>
+        </li>
+    <% }); %>
+</ul> -->
+        <div class="content-backdrop fade"></div>
           </div>
           <!-- Content wrapper -->
         </div>
@@ -659,10 +472,11 @@
       </div>
 
       <!-- Overlay -->
-      <div class="layout-overlay layout-menu-toggle"></div>
-    </div>
+        <div class="layout-overlay layout-menu-toggle"></div>
+        </div>
     <!-- / Layout wrapper -->
     
+
 
     <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
@@ -688,3 +502,5 @@
     <script async defer src="https://buttons.github.io/buttons.js"></script>
   </body>
 </html>
+
+
